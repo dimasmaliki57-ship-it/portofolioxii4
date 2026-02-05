@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimas Anas Maliki | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --primary-color: #1a365d; /* Biru tegas (kesan disiplin/polisi) */
+            --accent-color: #ffd700;  /* Emas untuk kesan prestasi */
+            --text-dark: #2d3748;
+            --text-light: #f7fafc;
+            --bg-light: #f4f7f6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            background: #fff;
+            padding: 1rem 10%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li { margin-left: 2rem; }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover { color: var(--primary-color); }
+
+        /* --- Home Section --- */
+        #home {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(26, 54, 93, 0.8), rgba(26, 54, 93, 0.8)), 
+                        url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80') center/cover;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid var(--accent-color);
+            margin-bottom: 1.5rem;
+            object-fit: cover;
+        }
+
+        .cta-button {
+            margin-top: 2rem;
+            padding: 0.8rem 2rem;
+            background: var(--accent-color);
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: 0.3s transform;
+        }
+
+        .cta-button:hover { transform: scale(1.05); }
+
+        /* --- Sections General --- */
+        section { padding: 5rem 10%; }
+        h2 { 
+            text-align: center; 
+            margin-bottom: 3rem; 
+            font-size: 2rem; 
+            color: var(--primary-color);
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            width: 50px;
+            height: 4px;
+            background: var(--accent-color);
+            display: block;
+            margin: 10px auto;
+        }
+
+        /* --- About & Skills --- */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: #e2e8f0;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.9rem;
+        }
+
+        /* --- Timeline (Education) --- */
+        .timeline { border-left: 3px solid var(--primary-color); padding-left: 20px; }
+        .timeline-item { margin-bottom: 20px; position: relative; }
+        .timeline-item::before {
+            content: '';
+            width: 12px; height: 12px;
+            background: var(--accent-color);
+            position: absolute; left: -28px; top: 5px;
+            border-radius: 50%;
+        }
+
+        /* --- Portfolio Grid --- */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .portfolio-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .portfolio-card:hover { transform: translateY(-10px); }
+
+        .portfolio-info { padding: 1.5rem; }
+
+        /* --- Contact & Footer --- */
+        .contact-info { text-align: center; font-size: 1.2rem; }
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-content { grid-template-columns: 1fr; }
+            nav ul { display: none; } /* Untuk kesederhanaan mobile dihilangkan */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">DIMAS</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <img src="https://via.placeholder.com/180" alt="Dimas Anas Maliki" class="profile-img">
+        <h1>Dimas Anas Maliki</h1>
+        <p>Pelajar | Calon Anggota Polri masa depan</p>
+        <p><em>"Disiplin adalah kunci keberhasilan."</em></p>
+        <a href="#portfolio" class="cta-button">Lihat Portofolio</a>
+    </section>
+
+    <section id="about">
+        <h2>Tentang Saya</h2>
+        <div class="about-content">
+            <div>
+                <p>Halo! Saya Dimas, siswa di <strong>SMAN 1 Subang</strong> yang sangat antusias dengan proses belajar. Saya aktif dalam kegiatan Ekstrakurikuler yang melatih kedisiplinan dan fisik.</p>
+                <br>
+                <p><strong>Minat & Tujuan:</strong> Saya memiliki tekad yang kuat untuk melanjutkan studi saya di <strong>Kepolisian Negara Republik Indonesia</strong> guna mengabdi kepada masyarakat.</p>
+                <br>
+                <h3>Keunggulan Pribadi</h3>
+                <ul>
+                    <li>Integritas dan kejujuran tinggi</li>
+                    <li>Ketahanan fisik dan mental yang kuat</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Pendidikan</h3>
+                <div class="timeline">
+                    <div class="timeline-item"><strong>SMA:</strong> SMAN 1 Subang (Saat ini)</div>
+                    <div class="timeline-item"><strong>SMP:</strong> SMPN 4 Subang</div>
+                    <div class="timeline-item"><strong>SD:</strong> SDN 224 Cijambe Bandung</div>
+                    <div class="timeline-item"><strong>TK:</strong> Paud Kenangan</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" style="background: #fff;">
+        <h2>Keahlian</h2>
+        <div style="max-width: 800px; margin: auto;">
+            <h3>Hard Skills</h3>
+            <span class="skill-tag">English (Basic-Intermediate)</span>
+            <span class="skill-tag">Video Editing</span>
+            <span class="skill-tag">Desain Grafis Dasar</span>
+            
+            <h3 style="margin-top: 20px;">Soft Skills</h3>
+            <span class="skill-tag">Kepemimpinan (Leadership)</span>
+            <span class="skill-tag">Komunikasi Efektif</span>
+            <span class="skill-tag">Problem Solving</span>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <h2>Portofolio & Prestasi</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-card">
+                <div class="portfolio-info">
+                    <h3 style="color: var(--primary-color);">🏆 Juara Atletik</h3>
+                    <p>Meraih medali dalam kejuaraan atletik tingkat sekolah/daerah. Menunjukkan kekuatan fisik dan semangat kompetitif.</p>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <div class="portfolio-info">
+                    <h3 style="color: var(--primary-color);">🎥 Video Editing Project</h3>
+                    <p>Pembuatan video dokumentasi kegiatan ekstrakurikuler menggunakan aplikasi editing modern.</p>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <div class="portfolio-info">
+                    <h3 style="color: var(--primary-color);">👥 Pengalaman Organisasi</h3>
+                    <p>Aktif dalam mengelola kegiatan sekolah dan memimpin koordinasi antar anggota kelompok.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Hubungi Saya</h2>
+        <div class="contact-info">
+            <p>Tertarik untuk bekerja sama atau ingin bertanya lebih lanjut?</p>
+            <br>
+            <p><i class="fab fa-whatsapp"></i> WhatsApp: <strong>081320409652</strong></p>
+            <p><i class="far fa-envelope"></i> Email: dimas@example.com</p>
+            <br>
+            <div style="font-size: 2rem;">
+                <a href="#" style="color: #E1306C; margin: 0 10px;"><i class="fab fa-instagram"></i></a>
+                <a href="#" style="color: #0077b5; margin: 0 10px;"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Dimas Anas Maliki. All Rights Reserved.</p>
+        <p><small>Dibangun dengan semangat disiplin</small></p>
+    </footer>
+
+</body>
+</html>
